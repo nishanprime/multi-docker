@@ -11,8 +11,8 @@ script:
 after_success:
   - docker build -t nishanprime/multi-client ./client
   - docker build -t nishanprime/multi-nginx ./nginx
-  - docker build -t nishanprime/multi-nginx ./server
-  - docker build -t nishanprime/multi-nginx ./worker
+  - docker build -t nishanprime/multi-server ./server
+  - docker build -t nishanprime/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push nishanprime/multi-client
   - docker push nishanprime/multi-nginx
